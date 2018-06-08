@@ -492,7 +492,7 @@
           let $table = $('#tableSearch');
           let $tbody = $table.find('tbody');
           let $filters = $('#tableFilter *').serializeJSON();
-          let url = './services/cliente/search';
+          let url = './services/cliente/search.php';
 
           let params = {
             type: 'vates',
@@ -558,7 +558,7 @@
 
         function deleteCliente(id) {
           let cliente = id;
-          let url = './services/cliente/delete';
+          let url = './services/cliente/delete.php';
           let params = {
             type: 'vates',
             cliente: id
@@ -578,7 +578,7 @@
           let $form = $modal.find('form');
           let data = $form.serializeJSON();
           
-          let url = './services/cliente/add';
+          let url = './services/cliente/add.php';
           let params = {
             type: 'vates',
             cliente: data
