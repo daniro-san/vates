@@ -262,21 +262,25 @@
                 <td>AMBEV</td>
                 <td>-</td>
                 <td>INTERNO</td>
+                <td>-</td>
               </tr>
               <tr>
                 <td>ARCOR</td>
                 <td>-</td>
                 <td>ESTADUAL</td>
+                <td>-</td>
               </tr>
               <tr>
                 <td>ASR</td>
                 <td>-</td>
                 <td>EXTERNO</td>
+                <td>-</td>
               </tr>
               <tr>
                 <td>AMBEV</td>
                 <td>-</td>
                 <td>INTERNO</td>
+                <td>-</td>
               </tr>
             </tbody>
           </table>
