@@ -482,6 +482,12 @@
           search();
         });
 
+        $('body').on('click', '.btnDelete', function() {
+          let cliente = this.dataset.cod;
+
+          deleteCliente(cliente);
+        });
+
         function search() {
           let $table = $('#tableSearch');
           let $tbody = $table.find('tbody');
@@ -521,9 +527,10 @@
                 if(data.length > 0) {
                   let row = '';
                   $.each(data, (i, e) => {
+
                     let btns = `
-                      <button class="btn btn-warning" title="Editar"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger" title="Excluir"><i class="fa fa-trash"></i></button>
+                      <button class="btn btn-warning btnEdit" data-cod="${e.id}" title="Editar"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-danger btnDelete" data-cod="${e.id}" title="Excluir"><i class="fa fa-trash"></i></button>
                     `;
                     row += `
                       <tr>
@@ -548,6 +555,23 @@
         }
 
         search();
+
+        function deleteCliente(id) {
+          let cliente = id;
+          let url = './services/cliente/add';
+          let params = {
+            type: 'vates',
+            cliente: id
+          };
+
+          $.post(url, params, function(resp) {
+            if(resp.status === 0) {
+              $('#modalSuccess').modal('show');
+            } else {
+              $('#modalError').modal('show');
+            }
+          }, 'json');
+        }
 
         function save() {
           let $modal = $('#modalNew');
