@@ -1,0 +1,10 @@
+RewriteEngine On
+#checa se � um arquivo
+RewriteCond %{REQUEST_FILENAME} !-f
+#checa se � um diretorio
+RewriteCond %{REQUEST_FILENAME} !-d 
+#checa se � um atalho
+RewriteCond %{REQUEST_FILENAME} !-l 
+RewriteCond %{REQUEST_URI} !^/img
+
+RewriteRule (.*)/?$ $1.php [QSA,L]
