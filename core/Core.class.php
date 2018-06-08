@@ -20,11 +20,19 @@
 		public function __construct(){
 			$this->database_type = "mysql";
 
-      $this->host     = "localhost";
-      $this->database = "vates";
-      $this->user     = "root";
-      $this->password = "";
-      $this->port     = ""                      ;
+      //local
+      // $this->host     = "localhost";
+      // $this->database = "vates";
+      // $this->user     = "root";
+      // $this->password = "";
+      // $this->port     = "";
+      
+      //heroku
+      $this->host     = "us-cdbr-iron-east-04.cleardb.net";
+      $this->database = "heroku_79b2a01cefddbe9";
+      $this->user     = "bc576d59dd7749";
+      $this->password = "fb544929";
+      $this->port     = "";
       
 			
 			$this->connect();

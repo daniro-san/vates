@@ -558,7 +558,7 @@
 
         function deleteCliente(id) {
           let cliente = id;
-          let url = './services/cliente/add';
+          let url = './services/cliente/delete';
           let params = {
             type: 'vates',
             cliente: id
