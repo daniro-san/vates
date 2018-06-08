@@ -254,6 +254,7 @@
                 <th>NOME</th>
                 <th>CNPJ</th>
                 <th>MERCADO</th>
+                <th>AÇÕES</th>
               </tr>
             </thead>
             <tbody>
@@ -520,11 +521,16 @@
                 if(data.length > 0) {
                   let row = '';
                   $.each(data, (i, e) => {
+                    let btns = `
+                      <button class="btn btn-warning" title="Editar"><i class="fa fa-pencil"></i></button>
+                      <button class="btn btn-danger" title="Excluir"><i class="fa fa-trash"></i></button>
+                    `;
                     row += `
                       <tr>
                         <td>${(e.sRazaoSocial).toUpperCase()}</td>
                         <td>${e.iCNPJ}</td>
                         <td>${(e.sMercado).toUpperCase()}</td>
+                        <td class="text-center">${btns}</td>
                       </tr>
                     `;
                   });
@@ -540,6 +546,8 @@
             }
           }, 'json');
         }
+
+        search();
 
         function save() {
           let $modal = $('#modalNew');

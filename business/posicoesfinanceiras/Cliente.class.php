@@ -51,20 +51,6 @@
 			
     }
 
-    publick function delete( $id ) {
-      $sql = "update tcliente 
-              set available = 'F' 
-              where id = " . $id;
-
-      $result = $this->core->execute( $sql ) ;
-
-      if( !$result ){
-        $this->app->businessError( self::class . "::101", array( "line" => __LINE__ , "file" => __FILE__, "method" => __METHOD__ , "sql" => $sql ) ) ;
-      }
-      
-      return true;
-    }
-
     public function search( $filter ) {
 			
       $sql = $this->sqlSearch( $filter ) ;
@@ -96,8 +82,7 @@
     private function filter( $filter ){
 			
 			$filterSQL = "
-        where 1 = 1
-        and available = 'T' 
+				where 1 = 1
       " ;
       
       if( $filter->getMercado( ) != null && $filter->getMercado( ) != "" && $filter->getMercado( ) != "*" ){
